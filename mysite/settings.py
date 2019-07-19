@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,9 +76,20 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+                   # 连接数据库的类型，最后一位
+                   'ENGINE': 'django.db.backends.mysql',
+                   # 连接数据库的地址
+                   'HOST': '127.0.0.1',
+                   # 端口
+                   'PORT': 3306,
+                   # 数据库名称
+                   'NAME': "python",
+                   # 用户
+                   'USER': 'root',
+                   # 密码
+                   'PASSWORD': 'root'
+               }
+
 }
 
 

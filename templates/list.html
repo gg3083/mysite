@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center">
+    <thead>
+        <tr><td>ID</td><td>名字</td><td>年龄</td></tr>
+    </thead>
+    <tbody>
+    {% for data in list %}
+        <tr>
+            <td>{{ data.id }}</td>
+            <td>{{ data.name }}</td>
+            <td>{{ data.age }}</td>
+            <td><button value="" class="updBtn">编辑</button></td>
+            <td><button value="{{ data.id }}" class="delBtn">删除</button></td>
+        </tr>
+      {% endfor%}
+    </tbody>
+</table>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+    $(function () {
+         $(".delBtn").click(function () {
+        var id = this.value;
+        console.log(11);
+        $.get("/polls/del",{id:id},function (data) {
+        })
+    })
+    })
+
+
+</script>
