@@ -1,15 +1,31 @@
 import re
 
-import bs4
+import bs4 as bs4
 import pymysql
-from django.http import HttpResponse
 import requests
-from django.shortcuts import render, redirect
+import xlwt as xlwt
+import xlsxwriter as xw
 
-from polls import models
 
 db = pymysql.connect("localhost", "root", "root", "python");
 cursor = db.cursor()
+
+
+def creat():
+    # 创建user表
+    cursor.execute("drop table if exists user")
+    sql = """CREATE TABLE IF NOT EXISTS `user` ( 
+          `id` int(11) NOT NULL AUTO_INCREMENT, 
+          `name` varchar(255) NOT NULL, 
+          `age` int(11) NOT NULL, 
+          PRIMARY KEY (`id`) 
+        ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0"""
+
+    cursor.execute(sql)
+
+
+
+
 
 def insert():
     sql = """INSERT INTO `user` (`id`,`name`, `age`) VALUES 
@@ -30,39 +46,21 @@ def insert():
         db.rollback()
 
 
-def delete(id):
-    sql = "delete from user where id='%s'" % (id)
-    print(sql)
-    try:
-        cursor.execute(sql)
-        db.commit()
-    except:
-        db.rollback()
 
-def update(id):
-    # sql = "update user set age=100 where id='%s'" % (id)
-    sql ="update user set age='{0}' where id ='{1}'".format(id*10,id)
-    print(sql)
-    try:
-        cursor.execute(sql)
-        db.commit()
-    except:
-        db.rollback()
 
 def select():
     cursor.execute("select * from user")
+
     results = cursor.fetchall()
-    return results;
 
+    for row in results:
+        id = row[0]
+        name = row[1]
+        age = row[2]
+        # print(type(row[1])) #打印变量类型 <class 'str'>
 
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-
-def list(request):
-    # ret = models.User.objects.all().order_by("id")
-    datas = requestPage()
-    return render(request, "list.html",{"list":datas})
+        print("id=%s,name=%s,age=%s" % \
+              (id,name, age))
 
 def requestPage():
 
@@ -98,11 +96,30 @@ def requestPage():
 
     print(datas)
     return datas
+    # export(datas)
 
-def delete(request):
-    id = request.GET.get("id")
-    print(id)
-    ret = models.User.objects.get(id=id);
-    ret.delete()
-    # return redirect("/polls/list")
-    return list(request)
+def export(msg_list):
+    workbook = xw.Workbook('Expenses03.xlsx')
+    worksheet = workbook.add_worksheet('sheet1')
+
+    worksheet.write(0, 0, "标题")
+    worksheet.write(0, 1, "地址")
+    worksheet.write(0, 2, "热度")
+
+    for i in range(len(msg_list)):
+            row = msg_list[i]
+            worksheet.write(i+1, 0, row["title"])
+            worksheet.write(i+1, 1, row["url"])
+            worksheet.write(i+1, 2, row["index"])
+    # 创建操作二进制数据的对象
+
+    # 关闭excel 文件 释放资源
+    workbook.close()
+
+
+
+
+if __name__ == '__main__':
+
+    datas =  requestPage()
+

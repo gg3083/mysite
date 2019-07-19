@@ -7,16 +7,13 @@
 <body>
 <table align="center">
     <thead>
-        <tr><td>ID</td><td>名字</td><td>年龄</td></tr>
+        <tr><td>名称</td><td>热度</td></tr>
     </thead>
     <tbody>
     {% for data in list %}
         <tr>
-            <td>{{ data.id }}</td>
-            <td>{{ data.name }}</td>
-            <td>{{ data.age }}</td>
-            <td><button value="" class="updBtn">编辑</button></td>
-            <td><button value="{{ data.id }}" class="delBtn">删除</button></td>
+            <td><a href="{{ data.url }}" target="_blank">{{ data.title}}</a></td>
+            <td>{{ data.index }}</td>
         </tr>
       {% endfor%}
     </tbody>
