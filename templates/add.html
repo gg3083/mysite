@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/polls/upload/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+  Select images: <input type="file" name="files" multiple="multiple" />
+  <input type="submit" />
+</form>
+</body>
+</html>

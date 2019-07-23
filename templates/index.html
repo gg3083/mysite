@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+   <div class="row">
+      {% for img in files %}
+{#          <div class="col-xs-3">#}
+            <img src="/static/{{ img }}" class="col-xs-12">
+{#          </div>#}
+       {% endfor %}
+   </div>
+</div>
+</body>
+</html>

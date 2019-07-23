@@ -21,13 +21,13 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
-class User(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=200)
-    age = models.IntegerField(default=0)
-
-    class Meta:
-        db_table = 'user'
+# class User(models.Model):
+#     id = models.AutoField(primary_key=True)
+#     name = models.CharField(max_length=200)
+#     age = models.IntegerField(default=0)
+#
+#     class Meta:
+#         db_table = 'user'
     #
     # def __init__(self,id,name,age):
     #     self.name = name
