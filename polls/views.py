@@ -1,12 +1,10 @@
 import re
 import time
 import bs4
-import pymysql
 from django.http import HttpResponse
 import requests
 from django.shortcuts import render, redirect
 
-from polls import models
 
 
 def index(request):

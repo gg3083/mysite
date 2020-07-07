@@ -19,21 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a93a3242-bff5-4bae-b5e3-c5eed821b6d1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/test2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/test3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/wsgi.py" beforeDir="false" />
+    <list default="true" id="a93a3242-bff5-4bae-b5e3-c5eed821b6d1" name="Default Changelist" comment="test">
       <change beforePath="$PROJECT_DIR$/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/user_controller.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +225,7 @@
       <workItem from="1563627320302" duration="599000" />
       <workItem from="1563688243873" duration="606000" />
       <workItem from="1563690303150" duration="5423000" />
-      <workItem from="1594086476383" duration="657000" />
+      <workItem from="1594086476383" duration="752000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1563518906199</created>
@@ -247,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563518906199</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test">
+      <created>1594087192053</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594087192053</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,13 +285,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
     <state width="221" height="457" key="HiddenNamespacesPopup" timestamp="1594086535298">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
     <state width="221" height="457" key="HiddenNamespacesPopup/-1440.23.1440.877/0.23.1920.1012@0.23.1920.1012" timestamp="1594086535298" />
+    <state x="560" y="269" key="Vcs.Push.Dialog.v2" timestamp="1594087198758">
+      <screen x="0" y="23" width="1920" height="1012" />
+    </state>
+    <state x="560" y="269" key="Vcs.Push.Dialog.v2/-1440.23.1440.877/0.23.1920.1012@0.23.1920.1012" timestamp="1594087198758" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
