@@ -8,8 +8,6 @@ from django.shortcuts import render, redirect
 
 from polls import models
 
-db = pymysql.connect("localhost", "root", "root", "python");
-cursor = db.cursor()
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
